@@ -4,7 +4,7 @@ let day = document.querySelector('.weather_day');
 let humidity = document.querySelector('.weather_indicator--humidity>.value');
 let wind = document.querySelector('.weather_indicator--wind>.value');
 let pressure = document.querySelector('.weather_indicator--pressure>.value');
-let image = document.querySelector('.weather_image');
+
 let temperature = document.querySelector('.weather_temperature>.value');
 let forecastBlock = document.querySelector('.weather_forecast');
 const API_KEY = 'dcd60eb8cec748c18ba65041232207';
