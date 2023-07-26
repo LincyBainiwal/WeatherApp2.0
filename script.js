@@ -16,21 +16,21 @@ let getWeatherByCityName = async (city) =>{
     return weatherData;
 };
 let updateCurrentWeather = (data) => {
-    city.textContent = data.location.name + ', ' + data.location.country;
+    city.textContent = 'https://'+data.location.name + ', ' + 'https://'+data.location.country;
     day.textContent = dayOfWeek();
-   humidity.textContent = data.current.humidity + '%';
-   pressure.textContent = data.current.pressure_mb + 'mph';
-    wind.textContent = data.current.wind_dir + ', ' + data.current.wind_mph;
-    temperature.textContent = data.current.temp_c ;
+   humidity.textContent = 'https://'+data.current.humidity + '%';
+   pressure.textContent = 'https://'+data.current.pressure_mb + 'mph';
+    wind.textContent = 'https://'+data.current.wind_dir + ', ' + 'https://'+data.current.wind_mph;
+    temperature.textContent = 'https://'+data.current.temp_c ;
     image.src = 'https://'+ data.current.condition.icon;
-    image.alt = data.current.condition.text;
+    image.alt ='https://'+ data.current.condition.text;
 };
 let updateForecast = (data) => {
     forecastBlock.innerHTML = '';
     for (let i = 1; i <= 6; i++) {
         let forecastDate = new Date(data.forecast.forecastday[i].date);
         let forecastDay = forecastDate.toLocaleDateString('en-EN', { weekday: 'long' });
-        let  forecastTemp = data.forecast.forecastday[i].day.avgtemp_c;
+        let  forecastTemp = 'https://'+data.forecast.forecastday[i].day.avgtemp_c;
         let forecastCondition = 'https://'+data.forecast.forecastday[i].day.condition.icon;
 
         let forecastItem = document.createElement('article');
