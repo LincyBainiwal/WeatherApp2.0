@@ -28,7 +28,7 @@ let updateCurrentWeather = (data) => {
 let updateForecast = (data) => {
     forecastBlock.innerHTML = '';
     for (let i = 1; i <= 6; i++) {
-        let forecastDate = new Date(data.forecast.forecastday[i].date);
+        let forecastDate = new Date('https://'+data.forecast.forecastday[i].date);
         let forecastDay = forecastDate.toLocaleDateString('en-EN', { weekday: 'long' });
         let  forecastTemp = 'https://'+data.forecast.forecastday[i].day.avgtemp_c;
         let forecastCondition = 'https://'+data.forecast.forecastday[i].day.condition.icon;
